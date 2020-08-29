@@ -1,0 +1,102 @@
+@import '../abstracts/mixins.scss';
+
+.home {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100%;
+  // background: url('../../img/cool-background\ \(2\).png');
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  position: relative;
+
+  .logo {
+    position: absolute;
+    left: 2rem;
+    top: 2rem;
+    img {
+      width: 8rem;
+      filter: brightness(80%);
+      @include respond(tab-port) {
+        width: 5rem;
+      }
+    }
+  }
+
+  &__main {
+    font-size: 3rem;
+    animation: moveDown 1.5s;
+    pointer-events: none;
+
+    @include respond(phone) {
+      width: 100%;
+      align-self: center;
+      padding: 0 0 0 4rem;
+      font-size: 2.4rem;
+      line-height: 1.4;
+    }
+    & .name {
+      color: #fff;
+      background: linear-gradient($pink-1, $blue-1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  &__actions {
+    margin-top: 2.5rem;
+
+    &-nav {
+      list-style: none;
+      display: flex;
+      font-size: 2rem;
+      width: 32rem;
+      padding: 1rem;
+      justify-content: space-between;
+      border: 1px solid rgba($pink-1, 0.2);
+      animation: moveUp 1s;
+      & li {
+        & a {
+          text-decoration: none;
+          color: $text-1;
+          transition: all 1s;
+          text-transform: capitalize;
+          &:hover {
+            background: linear-gradient(to right, $pink-1, $blue-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
+      }
+    }
+  }
+}
+
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+@keyframes moveDown {
+  from {
+    transform: translateY(-10rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes moveUp {
+  from {
+    transform: translateY(4rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

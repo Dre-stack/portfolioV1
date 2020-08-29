@@ -1,0 +1,62 @@
+@import '../abstracts/mixins.scss';
+
+.contact {
+  display: flex;
+  width: 100vw;
+  height: 90vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 7rem;
+  font-size: 1.6rem;
+
+  @include respond(phone) {
+    padding: 4rem;
+    justify-content: flex-start;
+  }
+  // background-color: red;
+  &__header {
+    font-size: 4rem;
+    font-weight: 100;
+    background: linear-gradient($pink-1, $blue-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 3rem;
+
+    @include respond(phone) {
+      font-size: 3rem;
+    }
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 60rem;
+
+    @include respond(phone) {
+      width: 100%;
+    }
+
+    &-label {
+      margin-bottom: 0.4rem;
+      font-weight: 100;
+    }
+    &-error {
+      color: rgb(240, 125, 125);
+      margin-bottom: 2rem;
+    }
+    &-input {
+      margin-bottom: 1.5rem;
+      background-color: $body-color;
+      border: 1px solid #333131;
+      padding: 0.8rem 0.5rem;
+      color: #fff;
+      font-size: 1.6rem;
+      &:focus {
+        outline: none;
+      }
+    }
+    textarea {
+      font-family: 'Raleway', sans-serif;
+    }
+  }
+}

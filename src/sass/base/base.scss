@@ -1,0 +1,24 @@
+@import '../abstracts/mixins.scss';
+
+html {
+  font-size: 62.5%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: $body-color;
+  width: 100vw;
+  height: 100vh;
+  // overflow: hidden;
+  font-family: 'Raleway', sans-serif;
+  color: #fff;
+
+  @include respond(tab-land) {
+    overflow-y: scroll;
+  }
+}
