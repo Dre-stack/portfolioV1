@@ -154,7 +154,11 @@ function Projects() {
               {/* <img src={kitWebsite} alt="kit website" /> */}
             </div>
             <div className="details">
-              <div className="title"> Airbnb Clone </div>
+              <div className="title">
+                {' '}
+                Airbnb Clone (Build in progress, Please View With
+                Desktop){' '}
+              </div>
               <h2 className="heading">Features</h2>
               <div className="list">
                 <h4>
